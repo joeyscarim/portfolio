@@ -140,8 +140,8 @@ export const companies: Company[] = [
         icon: "/icons/leadowl.jpg",
         description:
           "Mobile-first CRM for capturing and following up on leads, with native Facebook Lead Ads integration, quick replies, push notification reminders, and response-time analytics.",
-        role: "Technical Project Management, iOS, Android",
-        stack: "AWS, React Native",
+        role: "iOS & Android App, Technical Project Management",
+        stack: "React Native, AWS",
         status: "Exited",
         screenshots: [
           "/screenshots/leadowl/home.jpg",
@@ -158,8 +158,8 @@ export const companies: Company[] = [
         icon: "/icons/businessglu.webp",
         description:
           "White-label employee training app with gamified lessons, push notifications, and company-branded content.",
-        role: "Tech Project Management, iOS, Android",
-        stack: "AWS, React Native",
+        role: "iOS & Android App, Technical Project Management",
+        stack: "React Native, AWS",
         status: "Exited",
         screenshots: [
           "/screenshots/businessglu/training.webp",
@@ -176,8 +176,8 @@ export const companies: Company[] = [
         icon: "/icons/onlinesalespro.jpg",
         description:
           "Lead generation and CRM app for building landing pages, capturing leads, and following up from a phone.",
-        role: "Tech Project Management, iOS, Android",
-        stack: "AWS, React Native",
+        role: "iOS & Android App, Web App Frontend, REST API",
+        stack: "React Native, Bootstrap, jQuery, PHP, MySQL",
         status: "Exited",
         screenshots: [
           "/screenshots/osp/leads.webp",
@@ -192,7 +192,7 @@ export const companies: Company[] = [
         icon: "/icons/knowledgely.webp",
         description:
           "Course marketplace app with in-app credits, free previews, and lessons you unlock as you learn.",
-        role: "iOS & Android App, IAP",
+        role: "iOS & Android App, In-App Purchases",
         stack: "React Native, RevenueCat",
         status: "Retired",
         screenshots: [
@@ -210,8 +210,8 @@ export const companies: Company[] = [
         icon: "/icons/heybrain.webp",
         description:
           "Mobile learning app for browsing, buying, and completing online courses.",
-        role: "iOS App, Android App",
-        stack: "React Native",
+        role: "iOS & Android App, Technical Project Management",
+        stack: "React Native, AWS",
         status: "Retired",
         screenshots: [
           "/screenshots/heybrain/discover.webp",
@@ -227,7 +227,7 @@ export const companies: Company[] = [
         icon: "/icons/kanyan.png",
         description:
           "Lead distribution app for sales teams with live routing, dashboards, appointments, and reminders.",
-        role: "iOS App, Android App",
+        role: "iOS & Android App",
         stack: "React Native",
         status: "Retired",
         screenshots: [
