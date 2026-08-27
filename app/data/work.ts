@@ -146,6 +146,10 @@ export const companies: Company[] = [
         name: "Knowledge.ly",
         initial: "K",
         accent: "bg-indigo-500",
+        icon: "/icons/knowledgely.webp",
+        role: "iOS & Android App, IAP",
+        stack: "React Native, RevenueCat",
+        status: "Retired",
       },
       {
         name: "HeyBrain",
