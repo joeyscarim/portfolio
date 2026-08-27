@@ -157,6 +157,9 @@ export const companies: Company[] = [
           "/screenshots/knowledgely/store.jpg",
           "/screenshots/knowledgely/earn.jpg",
         ],
+      },
+      {
+        name: "HeyBrain",
         initial: "H",
         accent: "bg-rose-500",
         icon: "/icons/heybrain.webp",
