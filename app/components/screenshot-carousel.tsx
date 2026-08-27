@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const PLACEHOLDER_COUNT = 5;
 
@@ -43,6 +44,21 @@ function ChevronRight() {
   );
 }
 
+function CloseIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="size-5"
+      aria-hidden="true"
+    >
+      <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function PlaceholderShot({
   projectName,
   index,
@@ -76,6 +92,100 @@ function PlaceholderShot({
   );
 }
 
+function Lightbox({
+  shots,
+  index,
+  projectName,
+  wide,
+  onClose,
+  onPrev,
+  onNext,
+}: {
+  shots: string[];
+  index: number;
+  projectName: string;
+  wide: boolean;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  const hasMultiple = shots.length > 1;
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") onPrev();
+      if (event.key === "ArrowRight") onNext();
+    }
+
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose, onPrev, onNext]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${projectName} screenshot ${index + 1}`}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 sm:p-8"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Close screenshot"
+        className="absolute top-4 right-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+      >
+        <CloseIcon />
+      </button>
+
+      {hasMultiple ? (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            onPrev();
+          }}
+          aria-label={`Previous ${projectName} screenshot`}
+          className="absolute left-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+        >
+          <ChevronLeft />
+        </button>
+      ) : null}
+
+      <Image
+        src={shots[index]}
+        alt={`${projectName} screenshot ${index + 1}`}
+        width={wide ? 1600 : 800}
+        height={wide ? 1000 : 1600}
+        sizes="90vw"
+        className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+        onClick={(event) => event.stopPropagation()}
+      />
+
+      {hasMultiple ? (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            onNext();
+          }}
+          aria-label={`Next ${projectName} screenshot`}
+          className="absolute right-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+        >
+          <ChevronRight />
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
 export function ScreenshotCarousel({
   images,
   projectName,
@@ -86,8 +196,14 @@ export function ScreenshotCarousel({
   wide?: boolean;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const shots = images ?? [];
   const hasImages = shots.length > 0;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   function scrollByCard(direction: number) {
     const scroller = scrollerRef.current;
@@ -98,6 +214,21 @@ export function ScreenshotCarousel({
     scroller.scrollBy({ left: direction * amount, behavior: "smooth" });
   }
 
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+  const stepLightbox = useCallback(
+    (direction: number) => {
+      setLightboxIndex((current) => {
+        if (current === null || shots.length === 0) return current;
+        return (current + direction + shots.length) % shots.length;
+      });
+    },
+    [shots.length],
+  );
+
+  const prevLightbox = useCallback(() => stepLightbox(-1), [stepLightbox]);
+  const nextLightbox = useCallback(() => stepLightbox(1), [stepLightbox]);
+
   return (
     <div className="relative">
       <div
@@ -106,10 +237,12 @@ export function ScreenshotCarousel({
       >
         {hasImages
           ? shots.map((src, index) => (
-              <div
+              <button
                 key={src}
+                type="button"
                 data-shot
-                className="flex h-64 w-auto shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+                onClick={() => setLightboxIndex(index)}
+                className="flex h-64 w-auto shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
               >
                 <Image
                   src={src}
@@ -119,7 +252,7 @@ export function ScreenshotCarousel({
                   className="h-full w-auto max-w-none"
                   style={{ width: "auto", height: "100%" }}
                 />
-              </div>
+              </button>
             ))
           : Array.from({ length: PLACEHOLDER_COUNT }, (_, index) => (
               <PlaceholderShot
@@ -146,6 +279,21 @@ export function ScreenshotCarousel({
       >
         <ChevronRight />
       </button>
+
+      {mounted && lightboxIndex !== null
+        ? createPortal(
+            <Lightbox
+              shots={shots}
+              index={lightboxIndex}
+              projectName={projectName}
+              wide={wide}
+              onClose={closeLightbox}
+              onPrev={prevLightbox}
+              onNext={nextLightbox}
+            />,
+            document.body,
+          )
+        : null}
     </div>
   );
 }
