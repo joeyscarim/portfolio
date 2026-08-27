@@ -150,9 +150,13 @@ export const companies: Company[] = [
         role: "iOS & Android App, IAP",
         stack: "React Native, RevenueCat",
         status: "Retired",
-      },
-      {
-        name: "HeyBrain",
+        screenshots: [
+          "/screenshots/knowledgely/home.jpg",
+          "/screenshots/knowledgely/course.jpg",
+          "/screenshots/knowledgely/lesson.jpg",
+          "/screenshots/knowledgely/store.jpg",
+          "/screenshots/knowledgely/earn.jpg",
+        ],
         initial: "H",
         accent: "bg-rose-500",
         icon: "/icons/heybrain.webp",
