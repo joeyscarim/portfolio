@@ -32,7 +32,7 @@ export const companies: Company[] = [
         accent: "bg-sky-400",
         icon: "/icons/lookify.png",
         description:
-          "Phone lookup platform with carrier data, threat scoring, and person search across web, iOS, and Android.",
+          "Reverse phone lookup platform with carrier data, threat scoring, and person search across web, iOS, and Android, plus integrations and MCP.",
         role: "API, Web App, iOS & Android App, Admin Panel, Payment Processing, Integrations",
         stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query, Stripe, RevenueCat",
         status: "Active",
