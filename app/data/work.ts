@@ -131,6 +131,12 @@ export const companies: Company[] = [
         role: "Tech Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
+        screenshots: [
+          "/screenshots/businessglu/training.jpg",
+          "/screenshots/businessglu/lesson.jpg",
+          "/screenshots/businessglu/notifications.jpg",
+          "/screenshots/businessglu/account.jpg",
+        ],
       },
       {
         name: "Online Sales Pro",
