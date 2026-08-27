@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProjectList } from "@/app/components/project-list";
 
 export default function Home() {
@@ -9,24 +10,15 @@ export default function Home() {
           <p className="mt-1 text-zinc-500">Software Engineer</p>
           <p className="text-zinc-500">Denver, CO</p>
 
-          <div className="mt-6 aspect-square w-full max-w-56 rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
-            <div className="flex h-full flex-col items-center justify-center gap-2 text-zinc-400">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                className="size-12"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="8" r="3.5" />
-                <path
-                  d="M5 19.5c1.2-3.2 3.8-5 7-5s5.8 1.8 7 5"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span className="text-xs">Photo</span>
-            </div>
+          <div className="relative mt-6 aspect-square w-full max-w-56 overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
+            <Image
+              src="/profile.jpg"
+              alt="Joey Scarim"
+              fill
+              priority
+              sizes="256px"
+              className="object-cover"
+            />
           </div>
 
           <nav className="mt-6 flex flex-col gap-2">
@@ -46,7 +38,12 @@ export default function Home() {
             >
               LinkedIn
             </a>
-            <a href="/resume.pdf" className="text-sky-400 hover:text-sky-500">
+            <a
+              href="/joey_scarim_resume.pdf"
+              className="text-sky-400 hover:text-sky-500"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume
             </a>
           </nav>
