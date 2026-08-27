@@ -4,7 +4,7 @@ import { ProjectList } from "@/app/components/project-list";
 export default function Home() {
   return (
     <div className="min-h-full bg-white font-sans">
-      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-16">
+      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-10">
         <aside className="w-full shrink-0 md:sticky md:top-16 md:w-56 lg:w-64">
           <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
           <p className="mt-1 text-zinc-500">Software Engineer</p>
@@ -21,7 +21,7 @@ export default function Home() {
             />
           </div>
 
-          <nav className="mt-6 flex flex-row flex-wrap gap-x-4 gap-y-1">
+          <nav className="mt-6 flex flex-row flex-wrap items-center gap-x-1 gap-y-1">
             <a
               href="https://github.com/joeyscarim"
               className="text-sky-700 hover:text-sky-800"
@@ -30,6 +30,7 @@ export default function Home() {
             >
               Github
             </a>
+            <span className="text-zinc-400">/</span>
             <a
               href="https://www.linkedin.com/in/joeyscarim"
               className="text-sky-700 hover:text-sky-800"
@@ -38,6 +39,7 @@ export default function Home() {
             >
               LinkedIn
             </a>
+            <span className="text-zinc-400">/</span>
             <a
               href="/joey_scarim_resume.pdf"
               className="text-sky-700 hover:text-sky-800"
