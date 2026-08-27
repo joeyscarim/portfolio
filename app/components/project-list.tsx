@@ -85,7 +85,7 @@ export function ProjectList() {
                     <div className="overflow-hidden">
                       <div className="px-1 pt-1 pb-5">
                         <ScreenshotCarousel
-                          count={project.screenshots}
+                          images={project.screenshots}
                           projectName={project.name}
                         />
                       </div>

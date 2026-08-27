@@ -1,6 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
+
+const PLACEHOLDER_COUNT = 5;
 
 const skeletons = [
   ["w-2/3", "w-full", "w-5/6", "w-1/2"],
@@ -40,14 +43,49 @@ function ChevronRight() {
   );
 }
 
+function PlaceholderShot({
+  projectName,
+  index,
+}: {
+  projectName: string;
+  index: number;
+}) {
+  const bars = skeletons[index % skeletons.length];
+
+  return (
+    <div
+      data-shot
+      className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+    >
+      <div className="flex aspect-[9/16] flex-col p-3">
+        <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-zinc-300" />
+        <div className="mb-3 h-24 rounded-xl bg-zinc-200" />
+        <div className="flex flex-1 flex-col gap-2">
+          {bars.map((width) => (
+            <div
+              key={width}
+              className={`h-2 rounded-full bg-zinc-200 ${width}`}
+            />
+          ))}
+        </div>
+        <p className="mt-auto pt-3 text-center text-[10px] text-zinc-400">
+          {projectName} {index + 1}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function ScreenshotCarousel({
-  count,
+  images,
   projectName,
 }: {
-  count: number;
+  images?: string[];
   projectName: string;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const shots = images ?? [];
+  const hasImages = shots.length > 0;
 
   function scrollByCard(direction: number) {
     const scroller = scrollerRef.current;
@@ -64,32 +102,29 @@ export function ScreenshotCarousel({
         ref={scrollerRef}
         className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {Array.from({ length: count }, (_, index) => {
-          const bars = skeletons[index % skeletons.length];
-          return (
-            <div
-              key={index}
-              data-shot
-              className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
-            >
-              <div className="flex aspect-[9/16] flex-col p-3">
-                <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-zinc-300" />
-                <div className="mb-3 h-24 rounded-xl bg-zinc-200" />
-                <div className="flex flex-1 flex-col gap-2">
-                  {bars.map((width) => (
-                    <div
-                      key={width}
-                      className={`h-2 rounded-full bg-zinc-200 ${width}`}
-                    />
-                  ))}
-                </div>
-                <p className="mt-auto pt-3 text-center text-[10px] text-zinc-400">
-                  {projectName} {index + 1}
-                </p>
+        {hasImages
+          ? shots.map((src, index) => (
+              <div
+                key={src}
+                data-shot
+                className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+              >
+                <Image
+                  src={src}
+                  alt={`${projectName} screenshot ${index + 1}`}
+                  width={472}
+                  height={1024}
+                  className="h-auto w-full"
+                />
               </div>
-            </div>
-          );
-        })}
+            ))
+          : Array.from({ length: PLACEHOLDER_COUNT }, (_, index) => (
+              <PlaceholderShot
+                key={index}
+                projectName={projectName}
+                index={index}
+              />
+            ))}
       </div>
 
       <button
