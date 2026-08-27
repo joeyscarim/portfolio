@@ -75,7 +75,7 @@ function PlaceholderShot({
   return (
     <div
       data-shot
-      className="flex h-64 w-auto shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80 aspect-[9/16]"
+      className="flex aspect-[9/16] h-64 w-auto shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100"
     >
       <div className="flex aspect-[9/16] flex-col p-3">
         <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-zinc-300" />
@@ -238,7 +238,7 @@ export function ScreenshotCarousel({
     <div className="relative">
       <div
         ref={scrollerRef}
-        className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-3 overflow-x-auto p-px pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {hasImages
           ? shots.map((src, index) => {
@@ -249,7 +249,7 @@ export function ScreenshotCarousel({
                   type="button"
                   data-shot
                   onClick={() => setLightboxIndex(index)}
-                  className="flex h-64 w-auto shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+                  className="flex h-64 w-auto shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl border border-zinc-200/80 bg-zinc-100"
                 >
                   <Image
                     src={src}
