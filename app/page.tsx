@@ -8,7 +8,7 @@ export default function Home() {
         <aside className="w-full shrink-0 md:sticky md:top-16 md:w-56 lg:w-64">
           <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
           <p className="mt-1 text-zinc-500">Software Engineer</p>
-          <p className="text-zinc-500">Denver, CO</p>
+          <p className="text-sm text-zinc-500">Denver, CO</p>
 
           <div className="relative mt-6 aspect-square w-full max-w-56 overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
             <Image
@@ -21,7 +21,7 @@ export default function Home() {
             />
           </div>
 
-          <nav className="mt-6 flex flex-col gap-2">
+          <nav className="mt-6 flex flex-row flex-wrap gap-x-4 gap-y-1">
             <a
               href="https://github.com/joeyscarim"
               className="text-sky-700 hover:text-sky-800"
