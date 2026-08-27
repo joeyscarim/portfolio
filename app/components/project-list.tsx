@@ -142,7 +142,7 @@ export function ProjectList() {
                     type="button"
                     onClick={() => toggle(id)}
                     aria-expanded={open}
-                    className="flex w-full items-center gap-3 py-3 text-left"
+                    className="flex w-full cursor-pointer items-center gap-3 py-3 text-left"
                   >
                     {project.icon ? (
                       <Image

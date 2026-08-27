@@ -144,7 +144,7 @@ function Lightbox({
         type="button"
         onClick={onClose}
         aria-label="Close screenshot"
-        className="absolute top-4 right-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+        className="absolute top-4 right-4 z-10 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
       >
         <CloseIcon />
       </button>
@@ -157,7 +157,7 @@ function Lightbox({
             onPrev();
           }}
           aria-label={`Previous ${projectName} screenshot`}
-          className="absolute left-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+          className="absolute left-4 z-10 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
         >
           <ChevronLeft />
         </button>
@@ -182,7 +182,7 @@ function Lightbox({
             onNext();
           }}
           aria-label={`Next ${projectName} screenshot`}
-          className="absolute right-4 z-10 flex size-10 items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
+          className="absolute right-4 z-10 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-700 shadow-md hover:bg-white"
         >
           <ChevronRight />
         </button>
@@ -277,7 +277,7 @@ export function ScreenshotCarousel({
         type="button"
         onClick={() => scrollByCard(-1)}
         aria-label={`Previous ${projectName} screenshot`}
-        className="absolute top-1/2 left-2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
+        className="absolute top-1/2 left-2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
       >
         <ChevronLeft />
       </button>
@@ -285,7 +285,7 @@ export function ScreenshotCarousel({
         type="button"
         onClick={() => scrollByCard(1)}
         aria-label={`Next ${projectName} screenshot`}
-        className="absolute top-1/2 right-2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
+        className="absolute top-1/2 right-2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
       >
         <ChevronRight />
       </button>
