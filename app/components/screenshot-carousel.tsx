@@ -55,7 +55,7 @@ function PlaceholderShot({
   return (
     <div
       data-shot
-      className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+      className="flex h-64 w-auto shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80 aspect-[9/16]"
     >
       <div className="flex aspect-[9/16] flex-col p-3">
         <div className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-zinc-300" />
@@ -109,14 +109,15 @@ export function ScreenshotCarousel({
               <div
                 key={src}
                 data-shot
-                className={`shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80 ${wide ? "w-72 sm:w-80 md:w-96" : "w-40"}`}
+                className="flex h-64 w-auto shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
               >
                 <Image
                   src={src}
                   alt={`${projectName} screenshot ${index + 1}`}
                   width={wide ? 1024 : 472}
                   height={wide ? 600 : 1024}
-                  className="h-auto w-full"
+                  className="h-full w-auto max-w-none"
+                  style={{ width: "auto", height: "100%" }}
                 />
               </div>
             ))

@@ -59,11 +59,27 @@ export const companies: Company[] = [
         initial: "F",
         accent: "bg-violet-500",
         icon: "/icons/flowos.png",
+        description:
+          "Marketing ecosystem with AI-powered funnel builder, ad-attribution portal, and integrations.",
+        role: "Web app, ad-attribution system, Engineering Manager",
+        stack: "Next.js, Posthog, React, Tailwind",
+        status: "Active",
+        screenshots: [
+          "/screenshots/flowos/funnel.jpg",
+          "/screenshots/flowos/analytics.jpg",
+          "/screenshots/flowos/integrations.jpg",
+        ],
+        wideScreenshots: true,
       },
       {
         name: "VuLive",
         initial: "V",
         accent: "bg-cyan-500",
+        description:
+          "Virtual event software with custom admin panel for setting up hub pages, broadcasts, live chat, gamification, and evergreen events.",
+        role: "Web App, Admin Panel, Streaming Tech, Integrations",
+        stack: "Next.js, Livekit, Resend, React",
+        status: "Retired",
         screenshots: [
           "/screenshots/vulive/live.jpg",
           "/screenshots/vulive/broadcast.jpg",
