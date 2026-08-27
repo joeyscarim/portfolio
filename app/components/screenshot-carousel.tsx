@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 const PLACEHOLDER_COUNT = 5;
 
 function shotIsWide(src: string, wide = false) {
+  if (src.includes("/ticket.")) return false;
   return wide || src.includes("/web-");
 }
 
