@@ -6,6 +6,9 @@ export type Project = {
   screenshots?: string[];
   wideScreenshots?: boolean;
   hidden?: boolean;
+  role?: string;
+  stack?: string;
+  status?: string;
 };
 
 export type Company = {
@@ -26,6 +29,9 @@ export const companies: Company[] = [
         initial: "L",
         accent: "bg-sky-400",
         icon: "/icons/lookify.png",
+        role: "Web App, API, iOS, Android Developer",
+        stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query",
+        status: "Active",
         screenshots: [
           "/screenshots/lookify/search.jpg",
           "/screenshots/lookify/report.jpg",
@@ -82,18 +88,27 @@ export const companies: Company[] = [
         initial: "O",
         accent: "bg-amber-500",
         icon: "/icons/leadowl.jpg",
+        role: "Technical Project Management, iOS, Android",
+        stack: "AWS, React Native",
+        status: "Exited",
       },
       {
         name: "BusinessGlu",
         initial: "B",
         accent: "bg-emerald-500",
         icon: "/icons/businessglu.webp",
+        role: "Tech Project Management, iOS, Android",
+        stack: "AWS, React Native",
+        status: "Exited",
       },
       {
         name: "Online Sales Pro",
         initial: "S",
         accent: "bg-orange-500",
         icon: "/icons/onlinesalespro.png",
+        role: "Tech Project Management, iOS, Android",
+        stack: "AWS, React Native",
+        status: "Exited",
       },
       {
         name: "Knowledge.ly",

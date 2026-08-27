@@ -5,6 +5,42 @@ import { useState } from "react";
 import { companies } from "@/app/data/work";
 import { ScreenshotCarousel } from "@/app/components/screenshot-carousel";
 
+function ProjectInfoCard({
+  role,
+  stack,
+  status,
+}: {
+  role?: string;
+  stack?: string;
+  status?: string;
+}) {
+  const statusClass =
+    status === "Active"
+      ? "bg-emerald-50 text-emerald-700 ring-emerald-100"
+      : status === "Exited"
+        ? "bg-amber-50 text-amber-800 ring-amber-100"
+        : "bg-zinc-100 text-zinc-600 ring-zinc-200/80";
+
+  return (
+    <div className="mb-4 rounded-xl bg-zinc-50 px-4 py-3 text-sm ring-1 ring-zinc-200/70">
+      <dl className="grid grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-1.5">
+        <dt className="text-zinc-400">Role</dt>
+        <dd className="text-zinc-800">{role ?? "—"}</dd>
+        <dt className="text-zinc-400">Stack</dt>
+        <dd className="text-zinc-800">{stack ?? "—"}</dd>
+        <dt className="text-zinc-400">Status</dt>
+        <dd>
+          <span
+            className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${statusClass}`}
+          >
+            {status ?? "—"}
+          </span>
+        </dd>
+      </dl>
+    </div>
+  );
+}
+
 function ChevronDown({ open }: { open: boolean }) {
   return (
     <svg
@@ -86,6 +122,11 @@ export function ProjectList() {
                   >
                     <div className="overflow-hidden">
                       <div className="px-1 pt-1 pb-5">
+                        <ProjectInfoCard
+                          role={project.role}
+                          stack={project.stack}
+                          status={project.status}
+                        />
                         <ScreenshotCarousel
                           images={project.screenshots}
                           projectName={project.name}
