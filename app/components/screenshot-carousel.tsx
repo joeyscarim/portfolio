@@ -134,17 +134,31 @@ function Lightbox({
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    function onKey(event: KeyboardEvent) {
-      if (event.key === "Escape") onClose();
-      if (event.key === "ArrowLeft") onPrev();
-      if (event.key === "ArrowRight") onNext();
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
     }
 
-    window.addEventListener("keydown", onKey);
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        event.stopPropagation();
+        onPrev();
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        onNext();
+      }
+    }
+
+    window.addEventListener("keydown", onKey, true);
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("keydown", onKey, true);
     };
   }, [onClose, onPrev, onNext]);
 
@@ -296,6 +310,16 @@ export function ScreenshotCarousel({
 
   const prevLightbox = useCallback(() => stepLightbox(-1), [stepLightbox]);
   const nextLightbox = useCallback(() => stepLightbox(1), [stepLightbox]);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller || lightboxIndex === null) return;
+    const previousOverflow = scroller.style.overflow;
+    scroller.style.overflow = "hidden";
+    return () => {
+      scroller.style.overflow = previousOverflow;
+    };
+  }, [lightboxIndex]);
 
   return (
     <div className="relative">

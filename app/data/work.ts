@@ -23,7 +23,7 @@ export type Company = {
 export const companies: Company[] = [
   {
     name: "Lookify",
-    role: "Technical Co-founder",
+    role: "Technical Cofounder",
     dates: "December 2019 - Present",
     projects: [
       {
