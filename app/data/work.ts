@@ -111,7 +111,7 @@ export const companies: Company[] = [
         accent: "bg-sky-500",
         icon: "/icons/dailyhope.png",
         description:
-          "Long-term client project with custom CMS, Shopify donation flow, and bespoke content and media player. Delivers daily content to 1 million readers.",
+          "Long-term client project with custom CMS, Shopify donation flows, and bespoke content & media player. Delivers daily content to 1 million visitors.",
         role: "Web App, Custom CMS, API, Custom Shopify Checkout, Media Player",
         stack: "Next.js, React, Tailwind, Firebase, AWS S3, Shopify API",
         status: "Active",
