@@ -1,8 +1,6 @@
 export type Project = {
   name: string;
-  initial: string;
-  accent: string;
-  icon?: string;
+  icon: string;
   screenshots?: string[];
   wideScreenshots?: boolean;
   hidden?: boolean;
@@ -28,8 +26,6 @@ export const companies: Company[] = [
     projects: [
       {
         name: "Lookify.io",
-        initial: "L",
-        accent: "bg-sky-400",
         icon: "/icons/lookify.png",
         description:
           "Reverse phone lookup platform with carrier data, threat scoring, and person search across web, iOS, and Android, plus integrations and MCP.",
@@ -52,8 +48,6 @@ export const companies: Company[] = [
       },
       {
         name: "Best Free Phone Lookup",
-        initial: "P",
-        accent: "bg-blue-500",
         icon: "/icons/bestfreephonelookup.png",
         hidden: true,
       },
@@ -66,8 +60,6 @@ export const companies: Company[] = [
     projects: [
       {
         name: "FlowOS",
-        initial: "F",
-        accent: "bg-violet-500",
         icon: "/icons/flowos.png",
         description:
           "Marketing ecosystem with AI-powered funnel builder, ad-attribution portal, and integrations.",
@@ -86,8 +78,6 @@ export const companies: Company[] = [
       },
       {
         name: "VuLive",
-        initial: "V",
-        accent: "bg-cyan-500",
         icon: "/icons/vulive.png",
         description:
           "Virtual event software with admin panel for hub pages, video broadcasts, live chat, gamification, ticketing, and evergreen events. Had weekly events ranging from 20 to 30,000 attendees.",
@@ -107,8 +97,6 @@ export const companies: Company[] = [
       },
       {
         name: "Daily Hope",
-        initial: "D",
-        accent: "bg-sky-500",
         icon: "/icons/dailyhope.png",
         description:
           "Long-term client project with custom CMS, Shopify donation flows, and bespoke content & media player. Delivers daily content to 1 million visitors.",
@@ -135,8 +123,6 @@ export const companies: Company[] = [
     projects: [
       {
         name: "LeadOwl",
-        initial: "O",
-        accent: "bg-amber-500",
         icon: "/icons/leadowl.jpg",
         description:
           "Mobile-first CRM for capturing and following up on leads, with native Facebook Lead Ads integration, quick replies, push notification reminders, and response-time analytics.",
@@ -153,8 +139,6 @@ export const companies: Company[] = [
       },
       {
         name: "BusinessGlu",
-        initial: "B",
-        accent: "bg-emerald-500",
         icon: "/icons/businessglu.webp",
         description:
           "White-label employee training app with gamified lessons, push notifications, and company-branded content.",
@@ -171,8 +155,6 @@ export const companies: Company[] = [
       },
       {
         name: "Online Sales Pro",
-        initial: "S",
-        accent: "bg-orange-500",
         icon: "/icons/onlinesalespro.jpg",
         description:
           "Lead generation and CRM app for building landing pages, capturing leads, and following up from a phone.",
@@ -187,8 +169,6 @@ export const companies: Company[] = [
       },
       {
         name: "Knowledge.ly",
-        initial: "K",
-        accent: "bg-indigo-500",
         icon: "/icons/knowledgely.webp",
         description:
           "Course marketplace app with in-app credits, free previews, and lessons you unlock as you learn.",
@@ -205,8 +185,6 @@ export const companies: Company[] = [
       },
       {
         name: "HeyBrain",
-        initial: "H",
-        accent: "bg-rose-500",
         icon: "/icons/heybrain.webp",
         description:
           "Mobile learning app for browsing, buying, and completing online courses.",
@@ -222,8 +200,6 @@ export const companies: Company[] = [
       },
       {
         name: "Kanyan",
-        initial: "K",
-        accent: "bg-violet-500",
         icon: "/icons/kanyan.png",
         description:
           "Lead distribution app for sales teams with live routing, dashboards, appointments, and reminders.",

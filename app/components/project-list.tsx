@@ -154,21 +154,13 @@ export function ProjectList() {
                     aria-expanded={open}
                     className="flex w-full cursor-pointer items-center gap-3 py-3 text-left"
                   >
-                    {project.icon ? (
-                      <Image
-                        src={project.icon}
-                        alt=""
-                        width={40}
-                        height={40}
-                        className="size-10 shrink-0 rounded-xl object-cover ring-1 ring-zinc-200"
-                      />
-                    ) : (
-                      <span
-                        className={`flex size-10 shrink-0 items-center justify-center rounded-xl text-sm font-medium text-white ${project.accent}`}
-                      >
-                        {project.initial}
-                      </span>
-                    )}
+                    <Image
+                      src={project.icon}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="size-10 shrink-0 rounded-xl object-cover ring-1 ring-zinc-200"
+                    />
                     <span className="min-w-0 flex-1 text-zinc-800">
                       {project.name}
                     </span>
