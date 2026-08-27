@@ -31,8 +31,8 @@ export const companies: Company[] = [
         initial: "L",
         accent: "bg-sky-400",
         icon: "/icons/lookify.png",
-        role: "Web App, API, iOS, Android Developer",
-        stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query",
+        role: "Web App, API, iOS & Android App, Admin Panel, Stripe",
+        stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query, Stripe, RevenueCat",
         status: "Active",
         url: "https://lookify.io",
         screenshots: [
@@ -63,7 +63,7 @@ export const companies: Company[] = [
         icon: "/icons/flowos.png",
         description:
           "Marketing ecosystem with AI-powered funnel builder, ad-attribution portal, and integrations.",
-        role: "Web app, ad-attribution system, Engineering Manager",
+        role: "Engineering Manager, Technical Project Management, Web App, Ad-attribution System",
         stack: "Next.js, Posthog, React, Tailwind",
         status: "Active",
         url: "https://getflowos.com",
@@ -81,8 +81,8 @@ export const companies: Company[] = [
         icon: "/icons/vulive.png",
         description:
           "Virtual event software with custom admin panel for setting up hub pages, broadcasts, live chat, gamification, and evergreen events.",
-        role: "Web App, Admin Panel, Streaming Tech, Integrations",
-        stack: "Next.js, Livekit, Resend, React",
+        role: "Web App, Admin Panel, Video Streaming, Integrations",
+        stack: "Next.js, Livekit, Mux, Resend, React",
         status: "Retired",
         screenshots: [
           "/screenshots/vulive/live.jpg",
