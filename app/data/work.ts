@@ -90,7 +90,7 @@ export const companies: Company[] = [
         accent: "bg-cyan-500",
         icon: "/icons/vulive.png",
         description:
-          "Virtual event software with admin panel for managing hub pages, video broadcasts, live chat, gamification, ticketing, and evergreen events. Held events ranging from 20 to 30,000 attendees.",
+          "Virtual event software with admin panel for hub pages, video broadcasts, live chat, gamification, ticketing, and evergreen events. Had weekly events ranging from 20 to 30,000 attendees.",
         role: "Web App, Admin Panel, Video Streaming, Integrations, Custom Ticket Scanner PWA",
         stack: "Next.js, Livekit, Mux, Resend, React",
         status: "Retired",
