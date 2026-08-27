@@ -106,8 +106,18 @@ function ChevronDown({ open }: { open: boolean }) {
 
 export function ProjectList() {
   const [openProjects, setOpenProjects] = useState<Set<string>>(new Set());
+  const [openedOnce, setOpenedOnce] = useState<Set<string>>(new Set());
 
   function toggle(id: string) {
+    const isOpen = openProjects.has(id);
+    if (!isOpen) {
+      setOpenedOnce((seen) => {
+        if (seen.has(id)) return seen;
+        const next = new Set(seen);
+        next.add(id);
+        return next;
+      });
+    }
     setOpenProjects((current) => {
       const next = new Set(current);
       if (next.has(id)) {
@@ -177,11 +187,13 @@ export function ProjectList() {
                           status={project.status}
                           url={project.url}
                         />
-                        <ScreenshotCarousel
-                          images={project.screenshots}
-                          projectName={project.name}
-                          wide={project.wideScreenshots}
-                        />
+                        {openedOnce.has(id) ? (
+                          <ScreenshotCarousel
+                            images={project.screenshots}
+                            projectName={project.name}
+                            wide={project.wideScreenshots}
+                          />
+                        ) : null}
                       </div>
                     </div>
                   </div>

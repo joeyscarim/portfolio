@@ -10,6 +10,22 @@ function shotIsWide(src: string, wide = false) {
   return wide || src.includes("/web-");
 }
 
+function shotSize(src: string, wide: boolean, kind: "preview" | "lightbox") {
+  const landscape = shotIsWide(src, wide);
+  if (kind === "lightbox") {
+    return {
+      width: landscape ? 1600 : 800,
+      height: landscape ? 1000 : 1600,
+      sizes: "90vw",
+    };
+  }
+  return {
+    width: landscape ? 1024 : 472,
+    height: landscape ? 600 : 1024,
+    sizes: landscape ? "420px" : "180px",
+  };
+}
+
 const skeletons = [
   ["w-2/3", "w-full", "w-5/6", "w-1/2"],
   ["w-1/2", "w-4/5", "w-full", "w-2/3"],
@@ -166,9 +182,7 @@ function Lightbox({
       <Image
         src={shots[index]}
         alt={`${projectName} screenshot ${index + 1}`}
-        width={shotIsWide(shots[index], wide) ? 1600 : 800}
-        height={shotIsWide(shots[index], wide) ? 1000 : 1600}
-        sizes="90vw"
+        {...shotSize(shots[index], wide, "lightbox")}
         quality={90}
         className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
         onClick={(event) => event.stopPropagation()}
@@ -205,8 +219,23 @@ export function ScreenshotCarousel({
   const [mounted, setMounted] = useState(false);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [previewsReady, setPreviewsReady] = useState(false);
+  const loadedPreviews = useRef(0);
   const shots = images ?? [];
   const hasImages = shots.length > 0;
+
+  const markPreviewSettled = useCallback(() => {
+    loadedPreviews.current += 1;
+    if (loadedPreviews.current >= shots.length) {
+      setPreviewsReady(true);
+    }
+  }, [shots.length]);
+
+  useEffect(() => {
+    if (!hasImages || previewsReady) return;
+    const timeout = window.setTimeout(() => setPreviewsReady(true), 3000);
+    return () => window.clearTimeout(timeout);
+  }, [hasImages, previewsReady]);
 
   const updateScrollState = useCallback(() => {
     const scroller = scrollerRef.current;
@@ -276,7 +305,6 @@ export function ScreenshotCarousel({
       >
         {hasImages
           ? shots.map((src, index) => {
-              const landscape = shotIsWide(src, wide);
               return (
                 <button
                   key={src}
@@ -288,12 +316,14 @@ export function ScreenshotCarousel({
                   <Image
                     src={src}
                     alt={`${projectName} screenshot ${index + 1}`}
-                    width={landscape ? 1024 : 472}
-                    height={landscape ? 600 : 1024}
-                    sizes={landscape ? "420px" : "180px"}
+                    {...shotSize(src, wide, "preview")}
                     quality={90}
+                    loading="eager"
+                    fetchPriority={index === 0 ? "high" : "low"}
                     className="h-full w-auto max-w-none"
                     style={{ width: "auto", height: "100%" }}
+                    onLoad={markPreviewSettled}
+                    onError={markPreviewSettled}
                   />
                 </button>
               );
@@ -306,6 +336,21 @@ export function ScreenshotCarousel({
               />
             ))}
       </div>
+
+      {previewsReady
+        ? shots.map((src) => (
+            <Image
+              key={`lightbox-${src}`}
+              src={src}
+              alt=""
+              {...shotSize(src, wide, "lightbox")}
+              quality={90}
+              loading="eager"
+              className="pointer-events-none fixed top-0 left-0 h-px w-px opacity-0"
+              aria-hidden
+            />
+          ))
+        : null}
 
       <button
         type="button"
