@@ -108,8 +108,8 @@ export const companies: Company[] = [
         accent: "bg-sky-500",
         icon: "/icons/dailyhope.png",
         description:
-          "Long term client project with custom CMS, custom donation flow, and tailored content site, to deliver daily content to 1 million readers.",
-        role: "Web App, Custom CMS, API, Custom Shopify Checkout",
+          "Long-term client project with custom CMS, Shopify donation flow, and bespoke content and media player. Delivers daily content to 1 million readers.",
+        role: "Web App, Custom CMS, API, Custom Shopify Checkout, Media Player",
         stack: "Next.js, React, Tailwind, Shopify API",
         status: "Active",
         url: "https://pastorrick.com",
