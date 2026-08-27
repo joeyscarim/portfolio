@@ -112,7 +112,7 @@ export const companies: Company[] = [
         status: "Active",
         url: "https://pastorrick.com",
         screenshots: [
-          "/screenshots/dailyhope/home.jpg",
+          "/screenshots/dailyhope/home.png",
           "/screenshots/dailyhope/teaching.png",
           "/screenshots/dailyhope/listen.png",
           "/screenshots/dailyhope/donate.png",
@@ -157,10 +157,11 @@ export const companies: Company[] = [
         stack: "AWS, React Native",
         status: "Exited",
         screenshots: [
-          "/screenshots/businessglu/training.jpg",
-          "/screenshots/businessglu/lesson.jpg",
-          "/screenshots/businessglu/notifications.jpg",
-          "/screenshots/businessglu/account.jpg",
+          "/screenshots/businessglu/training.webp",
+          "/screenshots/businessglu/module.webp",
+          "/screenshots/businessglu/lesson.webp",
+          "/screenshots/businessglu/notifications.webp",
+          "/screenshots/businessglu/account.webp",
         ],
       },
       {
@@ -174,10 +175,9 @@ export const companies: Company[] = [
         stack: "AWS, React Native",
         status: "Exited",
         screenshots: [
-          "/screenshots/osp/leads.jpg",
-          "/screenshots/osp/pages.jpg",
-          "/screenshots/osp/detail.jpg",
-          "/screenshots/osp/follow-up.jpg",
+          "/screenshots/osp/leads.webp",
+          "/screenshots/osp/pages.webp",
+          "/screenshots/osp/detail.webp",
         ],
       },
       {
@@ -191,11 +191,11 @@ export const companies: Company[] = [
         stack: "React Native, RevenueCat",
         status: "Retired",
         screenshots: [
-          "/screenshots/knowledgely/home.jpg",
-          "/screenshots/knowledgely/course.jpg",
-          "/screenshots/knowledgely/lesson.jpg",
-          "/screenshots/knowledgely/store.jpg",
-          "/screenshots/knowledgely/earn.jpg",
+          "/screenshots/knowledgely/home.webp",
+          "/screenshots/knowledgely/course.webp",
+          "/screenshots/knowledgely/lesson.webp",
+          "/screenshots/knowledgely/store.webp",
+          "/screenshots/knowledgely/earn.webp",
         ],
       },
       {
