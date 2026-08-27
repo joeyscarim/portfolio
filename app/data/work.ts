@@ -121,7 +121,7 @@ export const companies: Company[] = [
         accent: "bg-amber-500",
         icon: "/icons/leadowl.jpg",
         description:
-          "Mobile CRM for capturing and following up on leads, with landing pages, one-tap contact, quick replies, and response-time analytics.",
+          "Mobile-first CRM for capturing and following up on leads, with native Facebook Lead Ads integration, quick replies, push notification reminders, and response-time analytics.",
         role: "Technical Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
