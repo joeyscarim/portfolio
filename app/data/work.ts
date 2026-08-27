@@ -146,6 +146,15 @@ export const companies: Company[] = [
         initial: "H",
         accent: "bg-rose-500",
         icon: "/icons/heybrain.webp",
+        role: "iOS App, Android App",
+        stack: "React Native",
+        status: "Retired",
+        screenshots: [
+          "/screenshots/heybrain/discover.webp",
+          "/screenshots/heybrain/course.webp",
+          "/screenshots/heybrain/lessons.webp",
+          "/screenshots/heybrain/account.webp",
+        ],
       },
       {
         name: "Kanyan",
