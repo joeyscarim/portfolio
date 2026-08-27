@@ -1,49 +1,60 @@
+import { ProjectList } from "@/app/components/project-list";
+
 export default function Home() {
   return (
     <div className="min-h-full bg-white font-sans">
-      <main className="mx-auto max-w-2xl px-4 md:px-6 pt-12 md:pt-16 pb-16">
-        <h1 className="mb-8 text-2xl md:text-3xl font-normal text-zinc-600">
-          Hey, I&apos;m Joey 👋 I make apps.
-        </h1>
+      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-16">
+        <aside className="w-full shrink-0 md:sticky md:top-16 md:w-56 lg:w-64">
+          <h1 className="text-2xl text-zinc-800">Joey Scarim</h1>
+          <p className="mt-1 text-zinc-500">Software Engineer</p>
+          <p className="text-zinc-500">Denver, CO</p>
 
-        <div className="mb-8 bg-sky-400 py-2 text-center text-sm md:text-base text-white">
-          Joey Scarim / Web & App Developer / Denver, CO
-        </div>
+          <div className="mt-6 aspect-square w-full max-w-56 rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
+            <div className="flex h-full flex-col items-center justify-center gap-2 text-zinc-400">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className="size-12"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="8" r="3.5" />
+                <path
+                  d="M5 19.5c1.2-3.2 3.8-5 7-5s5.8 1.8 7 5"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span className="text-xs">Photo</span>
+            </div>
+          </div>
 
-        <div className="mb-8">
-          <p className="mb-2 text-zinc-800">I work primarily with:</p>
-          <ul className="list-disc space-y-0.5 pl-5 text-zinc-800">
-            <li>TypeScript/JavaScript (React, React Native)</li>
-            <li>Node.js (Next.js)</li>
-            <li>HTML/CSS (Tailwind, shadcn/ui)</li>
-            <li>Lots of data (BigQuery, dltHub, Posthog)</li>
-          </ul>
-        </div>
+          <nav className="mt-6 flex flex-col gap-2">
+            <a
+              href="https://github.com/joeyscarim"
+              className="text-sky-400 hover:text-sky-500"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/joeyscarim"
+              className="text-sky-400 hover:text-sky-500"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a href="/resume.pdf" className="text-sky-400 hover:text-sky-500">
+              Resume
+            </a>
+          </nav>
+        </aside>
 
-        <p className="mb-8 leading-relaxed text-zinc-800">
-          I studied Computer Science at the University of Arizona and currently
-          work on{" "}
-          <a
-            href="https://getflowos.com"
-            className="text-sky-400"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            FlowOS
-          </a>
-          , an AI-powered funnel building and ad-attribution platform that helps
-          small-to-medium businesses drive more engagement and convert more
-          customers.
-        </p>
-
-        <a
-          href="https://github.com/joeyscarim"
-          className="text-sky-400"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit me on Github
-        </a>
+        <section className="min-w-0 flex-1">
+          <ProjectList />
+        </section>
       </main>
     </div>
   );
