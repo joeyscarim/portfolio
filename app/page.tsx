@@ -25,9 +25,8 @@ export default function Home() {
           </div>
 
           <p className="mt-4 text-sm leading-relaxed text-zinc-600">
-            Since studying computer science at the University of Arizona,
-            I&apos;ve worked with small teams for 10+ years building a variety
-            of platforms while wearing many hats.
+            Since studying computer science at the University of Arizona, I’ve
+            spent 10+ years on small teams building products end to end.
           </p>
 
           <nav className="mt-4 flex flex-row flex-wrap items-center gap-x-1 gap-y-1">
