@@ -131,7 +131,7 @@ export const companies: Company[] = [
   {
     name: "LeadLine",
     role: "Web & Mobile App Developer",
-    dates: "April 2015 - October 2025",
+    dates: "April 2015 - October 2024",
     projects: [
       {
         name: "LeadOwl",
