@@ -71,8 +71,8 @@ export const companies: Company[] = [
         icon: "/icons/flowos.png",
         description:
           "Marketing ecosystem with AI-powered funnel builder, ad-attribution portal, and integrations.",
-        role: "Engineering Manager, Technical Project Manager, Web App, Ad-attribution System",
-        stack: "Next.js, Posthog, React, Tailwind",
+        role: "Technical Project Management, Web App, Ad-attribution System, Integrations",
+        stack: "Next.js, Node.js, Posthog, Redis, React, Tailwind",
         status: "Active",
         url: "https://getflowos.com",
         screenshots: [
