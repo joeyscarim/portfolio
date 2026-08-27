@@ -56,7 +56,7 @@ export const companies: Company[] = [
   {
     name: "Moonshot",
     role: "Lead Developer",
-    dates: "October 2025 - Present",
+    dates: "February 2021 - Present",
     projects: [
       {
         name: "FlowOS",
