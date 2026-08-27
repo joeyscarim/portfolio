@@ -110,7 +110,7 @@ export const companies: Company[] = [
         description:
           "Long-term client project with custom CMS, Shopify donation flow, and bespoke content and media player. Delivers daily content to 1 million readers.",
         role: "Web App, Custom CMS, API, Custom Shopify Checkout, Media Player",
-        stack: "Next.js, React, Tailwind, Shopify API",
+        stack: "Next.js, React, Tailwind, Firebase, AWS S3, Shopify API",
         status: "Active",
         url: "https://pastorrick.com",
         screenshots: [
