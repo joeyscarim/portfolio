@@ -6,19 +6,22 @@ export default function Home() {
     <div className="min-h-full bg-white font-sans">
       <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-14">
         <aside className="w-full shrink-0 md:sticky md:top-16 md:w-52 lg:w-60">
-          <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
-          <p className="mt-1 text-zinc-500">Software Engineer</p>
-          <p className="text-sm text-zinc-500">Denver, CO</p>
-
-          <div className="relative mt-6 aspect-square w-full overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
-            <Image
-              src="/profile.jpg"
-              alt="Joey Scarim"
-              fill
-              priority
-              sizes="256px"
-              className="object-cover"
-            />
+          <div className="flex items-center gap-4 md:flex-col-reverse md:items-stretch md:gap-0">
+            <div className="relative size-24 shrink-0 overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80 md:mt-6 md:aspect-square md:size-auto md:w-full">
+              <Image
+                src="/profile.jpg"
+                alt="Joey Scarim"
+                fill
+                priority
+                sizes="(max-width: 767px) 96px, 240px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
+              <p className="mt-1 text-zinc-500">Software Engineer</p>
+              <p className="text-sm text-zinc-500">Denver, CO</p>
+            </div>
           </div>
 
           <p className="mt-4 text-sm leading-relaxed text-zinc-600">
