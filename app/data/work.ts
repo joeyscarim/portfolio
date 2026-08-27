@@ -4,6 +4,8 @@ export type Project = {
   accent: string;
   icon?: string;
   screenshots?: string[];
+  wideScreenshots?: boolean;
+  hidden?: boolean;
 };
 
 export type Company = {
@@ -23,6 +25,7 @@ export const companies: Company[] = [
         name: "Lookify.io",
         initial: "L",
         accent: "bg-sky-400",
+        icon: "/icons/lookify.png",
         screenshots: [
           "/screenshots/lookify/search.jpg",
           "/screenshots/lookify/report.jpg",
@@ -35,6 +38,7 @@ export const companies: Company[] = [
         initial: "P",
         accent: "bg-blue-500",
         icon: "/icons/bestfreephonelookup.png",
+        hidden: true,
       },
     ],
   },
@@ -53,6 +57,13 @@ export const companies: Company[] = [
         name: "VuLive",
         initial: "V",
         accent: "bg-cyan-500",
+        screenshots: [
+          "/screenshots/vulive/live.jpg",
+          "/screenshots/vulive/broadcast.jpg",
+          "/screenshots/vulive/analytics.jpg",
+          "/screenshots/vulive/gamification.jpg",
+        ],
+        wideScreenshots: true,
       },
       {
         name: "Daily Hope",

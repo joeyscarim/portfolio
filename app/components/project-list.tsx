@@ -46,7 +46,9 @@ export function ProjectList() {
           <p className="mt-1 text-sm text-zinc-500">{company.dates}</p>
 
           <ul className="mt-4 divide-y divide-zinc-100">
-            {company.projects.map((project) => {
+            {company.projects
+              .filter((project) => !project.hidden)
+              .map((project) => {
               const id = `${company.name}-${project.name}`;
               const open = openProjects.has(id);
 
@@ -87,6 +89,7 @@ export function ProjectList() {
                         <ScreenshotCarousel
                           images={project.screenshots}
                           projectName={project.name}
+                          wide={project.wideScreenshots}
                         />
                       </div>
                     </div>

@@ -79,9 +79,11 @@ function PlaceholderShot({
 export function ScreenshotCarousel({
   images,
   projectName,
+  wide = false,
 }: {
   images?: string[];
   projectName: string;
+  wide?: boolean;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const shots = images ?? [];
@@ -107,13 +109,13 @@ export function ScreenshotCarousel({
               <div
                 key={src}
                 data-shot
-                className="w-40 shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+                className={`shrink-0 snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80 ${wide ? "w-72 sm:w-80 md:w-96" : "w-40"}`}
               >
                 <Image
                   src={src}
                   alt={`${projectName} screenshot ${index + 1}`}
-                  width={472}
-                  height={1024}
+                  width={wide ? 1024 : 472}
+                  height={wide ? 600 : 1024}
                   className="h-auto w-full"
                 />
               </div>
