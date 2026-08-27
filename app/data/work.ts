@@ -135,6 +135,12 @@ export const companies: Company[] = [
         role: "Tech Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
+        screenshots: [
+          "/screenshots/osp/leads.jpg",
+          "/screenshots/osp/pages.jpg",
+          "/screenshots/osp/detail.jpg",
+          "/screenshots/osp/follow-up.jpg",
+        ],
       },
       {
         name: "Knowledge.ly",
@@ -161,6 +167,9 @@ export const companies: Company[] = [
         initial: "K",
         accent: "bg-violet-500",
         icon: "/icons/kanyan.png",
+        role: "iOS App, Android App",
+        stack: "React Native",
+        status: "Retired",
         screenshots: [
           "/screenshots/kanyan/dashboard.jpg",
           "/screenshots/kanyan/appointments.jpg",
