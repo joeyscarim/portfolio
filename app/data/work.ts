@@ -6,6 +6,7 @@ export type Project = {
   screenshots?: string[];
   wideScreenshots?: boolean;
   hidden?: boolean;
+  description?: string;
   role?: string;
   stack?: string;
   status?: string;
@@ -76,6 +77,8 @@ export const companies: Company[] = [
         initial: "D",
         accent: "bg-sky-500",
         icon: "/icons/dailyhope.png",
+        description:
+          "Long term client project with custom CMS, custom donation flow, and tailored content site, to deliver daily content to 1 million readers.",
         role: "Web App, Custom CMS, API, Custom Shopify Checkout",
         stack: "Next.js, React, Tailwind, Shopify API",
         status: "Active",

@@ -6,10 +6,12 @@ import { companies } from "@/app/data/work";
 import { ScreenshotCarousel } from "@/app/components/screenshot-carousel";
 
 function ProjectInfoCard({
+  description,
   role,
   stack,
   status,
 }: {
+  description?: string;
   role?: string;
   stack?: string;
   status?: string;
@@ -23,6 +25,9 @@ function ProjectInfoCard({
 
   return (
     <div className="mb-4 rounded-xl bg-zinc-50 px-4 py-3 text-sm ring-1 ring-zinc-200/70">
+      {description ? (
+        <p className="mb-2 text-zinc-700">{description}</p>
+      ) : null}
       <dl className="grid grid-cols-[auto_1fr] items-baseline gap-x-2 gap-y-1.5">
         <dt className="text-zinc-400">Role</dt>
         <dd className="text-zinc-800">{role ?? "—"}</dd>
@@ -123,6 +128,7 @@ export function ProjectList() {
                     <div className="overflow-hidden">
                       <div className="px-1 pt-1 pb-5">
                         <ProjectInfoCard
+                          description={project.description}
                           role={project.role}
                           stack={project.stack}
                           status={project.status}
