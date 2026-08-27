@@ -22,7 +22,7 @@ function ProjectInfoCard({
     status === "Active"
       ? "bg-emerald-50 text-emerald-700 ring-emerald-100"
       : status === "Exited"
-        ? "bg-amber-50 text-amber-800 ring-amber-100"
+        ? "bg-orange-100 text-orange-700 ring-orange-200"
         : status === "Retired"
           ? "bg-zinc-100 text-zinc-600 ring-zinc-200/80"
           : "bg-zinc-100 text-zinc-600 ring-zinc-200/80";
