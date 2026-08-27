@@ -121,9 +121,7 @@ export const companies: Company[] = [
         role: "Technical Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
-      },
-      {
-        name: "BusinessGlu",
+        screenshots: ["/screenshots/leadowl/showcase.png"],
         initial: "B",
         accent: "bg-emerald-500",
         icon: "/icons/businessglu.webp",
