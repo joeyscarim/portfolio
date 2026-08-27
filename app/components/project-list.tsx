@@ -53,14 +53,39 @@ function ProjectInfoCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sky-700 hover:text-sky-800"
+              className="inline-flex items-center gap-1 text-sky-700 hover:text-sky-800"
             >
               {linkLabel}
+              <ExternalLinkIcon />
             </a>
           ) : null}
         </dd>
       </dl>
     </div>
+  );
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="size-3.5"
+      aria-hidden="true"
+    >
+      <path
+        d="M14 5h5v5M19 5l-7 7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
