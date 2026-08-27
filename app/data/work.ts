@@ -148,7 +148,7 @@ export const companies: Company[] = [
         name: "Online Sales Pro",
         initial: "S",
         accent: "bg-orange-500",
-        icon: "/icons/onlinesalespro.png",
+        icon: "/icons/onlinesalespro.jpg",
         role: "Tech Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
