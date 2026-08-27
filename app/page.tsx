@@ -4,13 +4,13 @@ import { ProjectList } from "@/app/components/project-list";
 export default function Home() {
   return (
     <div className="min-h-full bg-white font-sans">
-      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-10">
-        <aside className="w-full shrink-0 md:sticky md:top-16 md:w-56 lg:w-64">
+      <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-14">
+        <aside className="w-full shrink-0 md:sticky md:top-16 md:w-52 lg:w-60">
           <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
           <p className="mt-1 text-zinc-500">Software Engineer</p>
           <p className="text-sm text-zinc-500">Denver, CO</p>
 
-          <div className="relative mt-6 aspect-square w-full max-w-56 overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
+          <div className="relative mt-6 aspect-square w-full overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80">
             <Image
               src="/profile.jpg"
               alt="Joey Scarim"
