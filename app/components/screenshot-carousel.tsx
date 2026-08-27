@@ -165,6 +165,7 @@ function Lightbox({
         width={wide ? 1600 : 800}
         height={wide ? 1000 : 1600}
         sizes="90vw"
+        quality={90}
         className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
         onClick={(event) => event.stopPropagation()}
       />
@@ -249,6 +250,8 @@ export function ScreenshotCarousel({
                   alt={`${projectName} screenshot ${index + 1}`}
                   width={wide ? 1024 : 472}
                   height={wide ? 600 : 1024}
+                  sizes={wide ? "420px" : "180px"}
+                  quality={90}
                   className="h-full w-auto max-w-none"
                   style={{ width: "auto", height: "100%" }}
                 />
