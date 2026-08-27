@@ -10,11 +10,13 @@ function ProjectInfoCard({
   role,
   stack,
   status,
+  url,
 }: {
   description?: string;
   role?: string;
   stack?: string;
   status?: string;
+  url?: string;
 }) {
   const statusClass =
     status === "Active"
@@ -24,6 +26,10 @@ function ProjectInfoCard({
         : status === "Retired"
           ? "bg-zinc-100 text-zinc-600 ring-zinc-200/80"
           : "bg-zinc-100 text-zinc-600 ring-zinc-200/80";
+
+  const linkLabel = url
+    ? url.replace(/^https?:\/\//, "").replace(/\/$/, "")
+    : null;
 
   return (
     <div className="mb-4 rounded-xl bg-zinc-50 px-4 py-3 text-sm ring-1 ring-zinc-200/70">
@@ -36,12 +42,22 @@ function ProjectInfoCard({
         <dt className="text-zinc-400">Stack</dt>
         <dd className="text-zinc-800">{stack ?? "—"}</dd>
         <dt className="text-zinc-400">Status</dt>
-        <dd>
+        <dd className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <span
             className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ring-1 ${statusClass}`}
           >
             {status ?? "—"}
           </span>
+          {status === "Active" && linkLabel ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-700 hover:text-sky-800"
+            >
+              {linkLabel}
+            </a>
+          ) : null}
         </dd>
       </dl>
     </div>
@@ -134,6 +150,7 @@ export function ProjectList() {
                           role={project.role}
                           stack={project.stack}
                           status={project.status}
+                          url={project.url}
                         />
                         <ScreenshotCarousel
                           images={project.screenshots}

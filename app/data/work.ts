@@ -10,6 +10,7 @@ export type Project = {
   role?: string;
   stack?: string;
   status?: string;
+  url?: string;
 };
 
 export type Company = {
@@ -33,6 +34,7 @@ export const companies: Company[] = [
         role: "Web App, API, iOS, Android Developer",
         stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query",
         status: "Active",
+        url: "https://lookify.io",
         screenshots: [
           "/screenshots/lookify/search.jpg",
           "/screenshots/lookify/report.jpg",
@@ -64,6 +66,7 @@ export const companies: Company[] = [
         role: "Web app, ad-attribution system, Engineering Manager",
         stack: "Next.js, Posthog, React, Tailwind",
         status: "Active",
+        url: "https://getflowos.com",
         screenshots: [
           "/screenshots/flowos/funnel.jpg",
           "/screenshots/flowos/analytics.jpg",
@@ -99,6 +102,7 @@ export const companies: Company[] = [
         role: "Web App, Custom CMS, API, Custom Shopify Checkout",
         stack: "Next.js, React, Tailwind, Shopify API",
         status: "Active",
+        url: "https://pastorrick.com",
         screenshots: ["/screenshots/dailyhope/home.jpg"],
         wideScreenshots: true,
       },
