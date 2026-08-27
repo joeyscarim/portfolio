@@ -6,6 +6,10 @@ import { createPortal } from "react-dom";
 
 const PLACEHOLDER_COUNT = 5;
 
+function shotIsWide(src: string, wide = false) {
+  return wide || src.includes("/web-");
+}
+
 const skeletons = [
   ["w-2/3", "w-full", "w-5/6", "w-1/2"],
   ["w-1/2", "w-4/5", "w-full", "w-2/3"],
@@ -162,8 +166,8 @@ function Lightbox({
       <Image
         src={shots[index]}
         alt={`${projectName} screenshot ${index + 1}`}
-        width={wide ? 1600 : 800}
-        height={wide ? 1000 : 1600}
+        width={shotIsWide(shots[index], wide) ? 1600 : 800}
+        height={shotIsWide(shots[index], wide) ? 1000 : 1600}
         sizes="90vw"
         quality={90}
         className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
@@ -237,26 +241,29 @@ export function ScreenshotCarousel({
         className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {hasImages
-          ? shots.map((src, index) => (
-              <button
-                key={src}
-                type="button"
-                data-shot
-                onClick={() => setLightboxIndex(index)}
-                className="flex h-64 w-auto shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
-              >
-                <Image
-                  src={src}
-                  alt={`${projectName} screenshot ${index + 1}`}
-                  width={wide ? 1024 : 472}
-                  height={wide ? 600 : 1024}
-                  sizes={wide ? "420px" : "180px"}
-                  quality={90}
-                  className="h-full w-auto max-w-none"
-                  style={{ width: "auto", height: "100%" }}
-                />
-              </button>
-            ))
+          ? shots.map((src, index) => {
+              const landscape = shotIsWide(src, wide);
+              return (
+                <button
+                  key={src}
+                  type="button"
+                  data-shot
+                  onClick={() => setLightboxIndex(index)}
+                  className="flex h-64 w-auto shrink-0 cursor-zoom-in snap-start overflow-hidden rounded-2xl bg-zinc-100 ring-1 ring-zinc-200/80"
+                >
+                  <Image
+                    src={src}
+                    alt={`${projectName} screenshot ${index + 1}`}
+                    width={landscape ? 1024 : 472}
+                    height={landscape ? 600 : 1024}
+                    sizes={landscape ? "420px" : "180px"}
+                    quality={90}
+                    className="h-full w-auto max-w-none"
+                    style={{ width: "auto", height: "100%" }}
+                  />
+                </button>
+              );
+            })
           : Array.from({ length: PLACEHOLDER_COUNT }, (_, index) => (
               <PlaceholderShot
                 key={index}

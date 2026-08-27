@@ -38,6 +38,11 @@ export const companies: Company[] = [
         status: "Active",
         url: "https://lookify.io",
         screenshots: [
+          "/screenshots/lookify/web-home.png",
+          "/screenshots/lookify/web-search.png",
+          "/screenshots/lookify/web-usage.png",
+          "/screenshots/lookify/web-api.png",
+          "/screenshots/lookify/web-privacy.png",
           "/screenshots/lookify/search.png",
           "/screenshots/lookify/report.png",
           "/screenshots/lookify/results.png",
