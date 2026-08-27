@@ -31,6 +31,8 @@ export const companies: Company[] = [
         initial: "L",
         accent: "bg-sky-400",
         icon: "/icons/lookify.png",
+        description:
+          "Phone lookup platform with carrier data, threat scoring, and person search across web, iOS, and Android.",
         role: "API, Web App, iOS & Android App, Admin Panel, Payment Processing, Integrations",
         stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query, Stripe, RevenueCat",
         status: "Active",
@@ -118,6 +120,8 @@ export const companies: Company[] = [
         initial: "O",
         accent: "bg-amber-500",
         icon: "/icons/leadowl.jpg",
+        description:
+          "Mobile CRM for capturing and following up on leads, with landing pages, one-tap contact, quick replies, and response-time analytics.",
         role: "Technical Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
@@ -134,6 +138,8 @@ export const companies: Company[] = [
         initial: "B",
         accent: "bg-emerald-500",
         icon: "/icons/businessglu.webp",
+        description:
+          "White-label employee training app with gamified lessons, push notifications, and company-branded content.",
         role: "Tech Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
@@ -149,6 +155,8 @@ export const companies: Company[] = [
         initial: "S",
         accent: "bg-orange-500",
         icon: "/icons/onlinesalespro.jpg",
+        description:
+          "Lead generation and CRM app for building landing pages, capturing leads, and following up from a phone.",
         role: "Tech Project Management, iOS, Android",
         stack: "AWS, React Native",
         status: "Exited",
@@ -164,6 +172,8 @@ export const companies: Company[] = [
         initial: "K",
         accent: "bg-indigo-500",
         icon: "/icons/knowledgely.webp",
+        description:
+          "Course marketplace app with in-app credits, free previews, and lessons you unlock as you learn.",
         role: "iOS & Android App, IAP",
         stack: "React Native, RevenueCat",
         status: "Retired",
@@ -180,6 +190,8 @@ export const companies: Company[] = [
         initial: "H",
         accent: "bg-rose-500",
         icon: "/icons/heybrain.webp",
+        description:
+          "Mobile learning app for browsing, buying, and completing online courses.",
         role: "iOS App, Android App",
         stack: "React Native",
         status: "Retired",
@@ -195,6 +207,8 @@ export const companies: Company[] = [
         initial: "K",
         accent: "bg-violet-500",
         icon: "/icons/kanyan.png",
+        description:
+          "Lead distribution app for sales teams with live routing, dashboards, appointments, and reminders.",
         role: "iOS App, Android App",
         stack: "React Native",
         status: "Retired",
