@@ -83,7 +83,7 @@ export function ProjectList() {
       {companies.map((company) => (
         <section key={company.name}>
           <h2 className="text-lg text-zinc-800">
-            {company.name}{" "}
+            <span className="text-sky-700">{company.name}</span>{" "}
             <span className="text-zinc-400">/</span> {company.role}
           </h2>
           <p className="mt-1 text-sm text-zinc-500">{company.dates}</p>

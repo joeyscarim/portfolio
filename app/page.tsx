@@ -6,7 +6,7 @@ export default function Home() {
     <div className="min-h-full bg-white font-sans">
       <main className="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:gap-16">
         <aside className="w-full shrink-0 md:sticky md:top-16 md:w-56 lg:w-64">
-          <h1 className="text-2xl text-zinc-800">Joey Scarim</h1>
+          <h1 className="text-2xl text-sky-700">Joey Scarim</h1>
           <p className="mt-1 text-zinc-500">Software Engineer</p>
           <p className="text-zinc-500">Denver, CO</p>
 
@@ -24,7 +24,7 @@ export default function Home() {
           <nav className="mt-6 flex flex-col gap-2">
             <a
               href="https://github.com/joeyscarim"
-              className="text-sky-400 hover:text-sky-500"
+              className="text-sky-700 hover:text-sky-800"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,7 +32,7 @@ export default function Home() {
             </a>
             <a
               href="https://www.linkedin.com/in/joeyscarim"
-              className="text-sky-400 hover:text-sky-500"
+              className="text-sky-700 hover:text-sky-800"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ export default function Home() {
             </a>
             <a
               href="/joey_scarim_resume.pdf"
-              className="text-sky-400 hover:text-sky-500"
+              className="text-sky-700 hover:text-sky-800"
               target="_blank"
               rel="noopener noreferrer"
             >
