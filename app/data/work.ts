@@ -24,7 +24,7 @@ export const companies: Company[] = [
   {
     name: "Lookify",
     role: "Technical Cofounder",
-    dates: "December 2019 - Present",
+    dates: "January 2021 - Present",
     projects: [
       {
         name: "Lookify.io",
