@@ -203,12 +203,46 @@ export function ScreenshotCarousel({
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
   const shots = images ?? [];
   const hasImages = shots.length > 0;
+
+  const updateScrollState = useCallback(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+    setCanScrollPrev(scroller.scrollLeft > 1);
+    setCanScrollNext(scroller.scrollLeft < maxScroll - 1);
+  }, []);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    updateScrollState();
+    scroller.addEventListener("scroll", updateScrollState, { passive: true });
+
+    const imagesInScroller = scroller.querySelectorAll("img");
+    imagesInScroller.forEach((image) => {
+      if (!image.complete) image.addEventListener("load", updateScrollState);
+    });
+
+    const observer = new ResizeObserver(updateScrollState);
+    observer.observe(scroller);
+
+    return () => {
+      scroller.removeEventListener("scroll", updateScrollState);
+      imagesInScroller.forEach((image) => {
+        image.removeEventListener("load", updateScrollState);
+      });
+      observer.disconnect();
+    };
+  }, [updateScrollState, shots.length]);
 
   function scrollByCard(direction: number) {
     const scroller = scrollerRef.current;
@@ -276,16 +310,26 @@ export function ScreenshotCarousel({
       <button
         type="button"
         onClick={() => scrollByCard(-1)}
+        disabled={!canScrollPrev}
         aria-label={`Previous ${projectName} screenshot`}
-        className="absolute top-1/2 left-2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
+        className={`absolute top-1/2 left-2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white text-zinc-600 shadow-md ring-1 ring-zinc-200 ${
+          canScrollPrev
+            ? "cursor-pointer hover:bg-zinc-50"
+            : "cursor-default opacity-50"
+        }`}
       >
         <ChevronLeft />
       </button>
       <button
         type="button"
         onClick={() => scrollByCard(1)}
+        disabled={!canScrollNext}
         aria-label={`Next ${projectName} screenshot`}
-        className="absolute top-1/2 right-2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/95 text-zinc-600 shadow-md ring-1 ring-zinc-200 hover:bg-white"
+        className={`absolute top-1/2 right-2 z-10 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white text-zinc-600 shadow-md ring-1 ring-zinc-200 ${
+          canScrollNext
+            ? "cursor-pointer hover:bg-zinc-50"
+            : "cursor-default opacity-50"
+        }`}
       >
         <ChevronRight />
       </button>
