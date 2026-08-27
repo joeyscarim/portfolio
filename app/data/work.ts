@@ -91,7 +91,7 @@ export const companies: Company[] = [
         icon: "/icons/vulive.png",
         description:
           "Virtual event software with custom admin panel for setting up hub pages, broadcasts, live chat, gamification, and evergreen events.",
-        role: "Web App, Admin Panel, Video Streaming, Integrations",
+        role: "Web App, Admin Panel, Video Streaming, Integrations, Custom Ticket Scanner PWA",
         stack: "Next.js, Livekit, Mux, Resend, React",
         status: "Retired",
         screenshots: [
