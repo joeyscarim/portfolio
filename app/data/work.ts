@@ -75,6 +75,7 @@ export const companies: Company[] = [
         name: "VuLive",
         initial: "V",
         accent: "bg-cyan-500",
+        icon: "/icons/vulive.png",
         description:
           "Virtual event software with custom admin panel for setting up hub pages, broadcasts, live chat, gamification, and evergreen events.",
         role: "Web App, Admin Panel, Streaming Tech, Integrations",
