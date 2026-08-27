@@ -31,7 +31,7 @@ export const companies: Company[] = [
         initial: "L",
         accent: "bg-sky-400",
         icon: "/icons/lookify.png",
-        role: "Web App, API, iOS & Android App, Admin Panel, Stripe",
+        role: "API, Web App, iOS & Android App, Admin Panel, Payment Processing, Integrations",
         stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query, Stripe, RevenueCat",
         status: "Active",
         url: "https://lookify.io",
@@ -123,8 +123,8 @@ export const companies: Company[] = [
         status: "Exited",
         screenshots: [
           "/screenshots/leadowl/home.jpg",
-          "/screenshots/leadowl/leads.jpg",
           "/screenshots/leadowl/detail.jpg",
+          "/screenshots/leadowl/leads.jpg",
           "/screenshots/leadowl/replies.jpg",
           "/screenshots/leadowl/analytics.jpg",
         ],
