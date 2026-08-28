@@ -27,7 +27,7 @@ export const companies: Company[] = [
         name: "Lookify.io",
         icon: "/icons/lookify.png",
         description:
-          "Reverse phone lookup platform with carrier data, threat scoring, and person search across web, iOS, and Android, plus integrations and MCP.",
+          "Reverse phone number lookup platform with carrier, threat, and person data. Includes integrations, REST API, and MCP access.",
         role: "API, Web App, iOS & Android App, Admin Panel, Payment Processing, Integrations",
         stack: "Next.js, React, React Native, Tailwind, Firebase, Big Query, Stripe, RevenueCat",
         status: "Active",
