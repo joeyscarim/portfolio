@@ -72,25 +72,6 @@ export const companies: Company[] = [
         wideScreenshots: true,
       },
       {
-        name: "VuLive",
-        icon: "/icons/vulive.png",
-        description:
-          "Virtual event software with admin panel for hub pages, video broadcasts, live chat, gamification, ticketing, and evergreen events. Had weekly events ranging from 20 to 30,000 attendees.",
-        role: "Web App, Admin Panel, Video Streaming, Integrations, Ticket Scanner PWA",
-        stack: "Next.js, React, Node.js, Google Cloud, Livekit, Mux, Resend, React",
-        status: "Retired",
-        screenshots: [
-          "/screenshots/vulive/live.png",
-          "/screenshots/vulive/broadcast.png",
-          "/screenshots/vulive/replays.png",
-          "/screenshots/vulive/gamification.png",
-          "/screenshots/vulive/training.png",
-          "/screenshots/vulive/ticket.png",
-          "/screenshots/vulive/analytics.png",
-        ],
-        wideScreenshots: true,
-      },
-      {
         name: "Daily Hope",
         icon: "/icons/dailyhope.png",
         description:
@@ -106,6 +87,25 @@ export const companies: Company[] = [
           "/screenshots/dailyhope/donate.png",
           "/screenshots/dailyhope/cms-posts.png",
           "/screenshots/dailyhope/cms-schedule.png",
+        ],
+        wideScreenshots: true,
+      },
+      {
+        name: "VuLive",
+        icon: "/icons/vulive.png",
+        description:
+          "Virtual event software with admin panel for hub pages, video broadcasts, live chat, gamification, ticketing, and evergreen events. Had weekly events ranging from 20 to 30,000 attendees.",
+        role: "Web App, Admin Panel, Video Streaming, Integrations, Ticket Scanner PWA",
+        stack: "Next.js, React, Node.js, Google Cloud, Livekit, Mux, Resend, React",
+        status: "Retired",
+        screenshots: [
+          "/screenshots/vulive/live.png",
+          "/screenshots/vulive/broadcast.png",
+          "/screenshots/vulive/replays.png",
+          "/screenshots/vulive/gamification.png",
+          "/screenshots/vulive/training.png",
+          "/screenshots/vulive/ticket.png",
+          "/screenshots/vulive/analytics.png",
         ],
         wideScreenshots: true,
       },
