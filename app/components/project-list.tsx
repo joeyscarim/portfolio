@@ -11,12 +11,14 @@ function ProjectInfoCard({
   stack,
   status,
   url,
+  linkLabel,
 }: {
   description?: string;
   role?: string;
   stack?: string;
   status?: string;
   url?: string;
+  linkLabel?: string;
 }) {
   const statusClass =
     status === "Active"
@@ -27,9 +29,9 @@ function ProjectInfoCard({
           ? "bg-zinc-100 text-zinc-600 ring-zinc-200/80"
           : "bg-zinc-100 text-zinc-600 ring-zinc-200/80";
 
-  const linkLabel = url
-    ? url.replace(/^https?:\/\//, "").replace(/\/$/, "")
-    : null;
+  const hrefLabel =
+    linkLabel ??
+    (url ? url.replace(/^https?:\/\//, "").replace(/\/$/, "") : null);
 
   return (
     <div className="mb-4 rounded-xl bg-zinc-50 px-4 py-3 text-sm ring-1 ring-zinc-200/70">
@@ -48,14 +50,14 @@ function ProjectInfoCard({
           >
             {status ?? "—"}
           </span>
-          {status === "Active" && linkLabel ? (
+          {url && hrefLabel ? (
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sky-700 hover:text-sky-800"
             >
-              {linkLabel}
+              {hrefLabel}
               <ExternalLinkIcon />
             </a>
           ) : null}
@@ -176,6 +178,7 @@ export function ProjectList() {
                           stack={project.stack}
                           status={project.status}
                           url={project.url}
+                          linkLabel={project.linkLabel}
                         />
                         {openedOnce.has(id) ? (
                           <ScreenshotCarousel

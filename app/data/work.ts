@@ -8,6 +8,7 @@ export type Project = {
   stack?: string;
   status?: string;
   url?: string;
+  linkLabel?: string;
 };
 
 export type Company = {
@@ -123,6 +124,8 @@ export const companies: Company[] = [
         role: "iOS & Android App, Technical Project Management",
         stack: "React Native, AWS",
         status: "Exited",
+        url: "https://cacheventures.com/press/cache-ventures-launches-tech-fund-and-acquires-leadowl/",
+        linkLabel: "Announcement",
         screenshots: [
           "/screenshots/leadowl/home.jpg",
           "/screenshots/leadowl/detail.jpg",
