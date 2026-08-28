@@ -140,9 +140,7 @@ export function ProjectList() {
           <p className="mt-1 text-sm text-zinc-500">{company.dates}</p>
 
           <ul className="mt-4 divide-y divide-zinc-100">
-            {company.projects
-              .filter((project) => !project.hidden)
-              .map((project) => {
+            {company.projects.map((project) => {
               const id = `${company.name}-${project.name}`;
               const open = openProjects.has(id);
 

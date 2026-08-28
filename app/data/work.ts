@@ -3,7 +3,6 @@ export type Project = {
   icon: string;
   screenshots?: string[];
   wideScreenshots?: boolean;
-  hidden?: boolean;
   description?: string;
   role?: string;
   stack?: string;
@@ -45,11 +44,6 @@ export const companies: Company[] = [
           "/screenshots/lookify/resources.png",
           "/screenshots/lookify/iap.png",
         ],
-      },
-      {
-        name: "Best Free Phone Lookup",
-        icon: "/icons/bestfreephonelookup.png",
-        hidden: true,
       },
     ],
   },
