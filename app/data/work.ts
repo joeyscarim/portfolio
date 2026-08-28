@@ -162,6 +162,7 @@ export const companies: Company[] = [
           "/screenshots/osp/leads.webp",
           "/screenshots/osp/pages.webp",
           "/screenshots/osp/detail.webp",
+          "/screenshots/osp/notifications.webp",
         ],
       },
       {
